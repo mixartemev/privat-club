@@ -15,7 +15,7 @@ class UsersTableSeeder extends Seeder
         $user = [
             'id'             => 1,
             'name'           => 'Admin',
-            'email'          => 'admin@admin.com',
+            'email'          => 'mixartemev@gmail.com',
             'password'       => '$2y$10$UoFsFWK/n7Nwee9mJCMHx.SfCzZAWzrn/kjnF.7hSBr0JSYaAOUWi',
             'remember_token' => null,
             'created_at'     => '2019-06-03 17:34:43',
