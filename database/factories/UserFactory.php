@@ -19,11 +19,19 @@ use Faker\Generator as Faker;
 */
 
 $factory->define(User::class, function (Faker $faker) {
+    $users = User::all('id')->pluck('id')->toArray();
     return [
         'name' => $faker->name,
         'email' => $faker->unique()->safeEmail,
         'email_verified_at' => now(),
         'password' => '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi', // password
         'remember_token' => Str::random(10),
+        'status' => $faker->randomElement([1,2,3,1,2,1,2,1,2,1,1,1,3]),
+        'role' => $faker->randomElement([1,2,0,1,2,2,2,2,2]),
+        'sex' => $faker->randomElement([1,2,3,1,2,1,2,1,2]),
+        'orient' => $faker->randomElement([1,2,3,1,1,1,1,1,2,3,3]),
+        'direct' => $faker->randomElement([1,1,1,1,3,3,2]),
+        'old' => $faker->numberBetween(18, 50),
+        'invited_by_id' => $faker->randomElement($users),
     ];
 });
